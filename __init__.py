@@ -32,10 +32,11 @@ def count_intersections(data):
                     for row in intersections_count:
                         if intersection == row[0]:
                             row[1] = row[1] + 1
-    return data
+    return intersections_count
 
 data = prepare_data(data[0:1000])
 all_intersections = count_intersections(data)
+print all_intersections
 all_intersections.sort(key = lambda x: x[1], reverse = True)
-for item in all_intersection:
+for item in all_intersections:
     print item[0], item[1]
