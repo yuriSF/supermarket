@@ -33,7 +33,7 @@ argument, for example:
 The output of the program will be saved in the program root directory. Sample
 output is provided in /sample/out.txt.
 
-The sigma value of 2 is hard coded into program as a parameter to the
+The sigma value of 2 is hard coded into the program as a parameter to the
 count_overlaps() function. The database file is included in the program
 directory.
 
