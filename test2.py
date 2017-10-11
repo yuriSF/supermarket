@@ -1,9 +1,9 @@
 import operator
 import sys
 
-orig_stdout = sys.stdout
-f = open('out2.txt', 'w')
-sys.stdout = f
+# orig_stdout = sys.stdout
+# f = open('out2.txt', 'w')
+# sys.stdout = f
 
 def find_overlap(a, b):
     set_a, set_b = set(a), set(b)
@@ -20,20 +20,27 @@ def prepare_data(data):
 
 def count_overlaps(data):
     count_overlaps = {}
-    checked = []
     for ind, j in enumerate(data):
-        #print ind
         current_row = j
         reduced_data = data[ind+1:]
+        local_dict = {}
         for row in reduced_data:
             overlap = find_overlap(current_row, row)
-            if overlap and overlap not in checked:
+            print 'current', current_row
+            print 'row', row
+            print overlap
+            if overlap and overlap not in count_overlaps.keys():
+                print True
                 if len(overlap) > 2:
                     if overlap not in count_overlaps:
-                        count_overlaps[overlap] = 2
+                        local_dict[overlap] = 2
                     else:
-                        count_overlaps[overlap] += 1
-        checked.append(overlap)
+                        local_dict[overlap] += 1
+        print 'local', local_dict
+        print 'global', count_overlaps
+        count_overlaps.update(local_dict)
+        print 'global', count_overlaps
+        print '___________________'
     return count_overlaps
 
 def print_overlaps(all_overlaps):
@@ -62,14 +69,14 @@ test_data = [
     [1,1,2,3, 7]
 ]
 
-all_overlaps = count_overlaps(data)
+all_overlaps = count_overlaps(test_data)
 print_overlaps(all_overlaps)
-
-for overlap in all_overlaps:
-    for key in all_overlaps.keys():
-        if len(key) > len(overlap):
-            if len(overlap) == len(key.intersection(overlap)):
-                all_overlaps[key] += 1
-
-sys.stdout = orig_stdout
-f.close()
+#
+# for overlap in all_overlaps:
+#     for key in all_overlaps.keys():
+#         if len(key) > len(overlap):
+#             if len(overlap) == len(key.intersection(overlap)):
+#                 all_overlaps[key] += 1
+#
+# sys.stdout = orig_stdout
+# f.close()
