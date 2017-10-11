@@ -29,17 +29,16 @@ argument, for example:
 
 > python run.py output.txt
 
-The output of the program is saved in the program root directory as
-as comma separated values in the following order: ``item set size (N),
-co-occurrence frequency, item 1 id, item 2 id, …. item N id``. The output is
-sorted by frequency. Expected program output is provided in /sample/out.txt.
-
-The sigma is a parameter in the count_overlaps() function which sets the lower
+The output of the program is saved in the program root directory as comma
+separated values in the following order: ``item set size (N), co-occurrence
+frequency, item 1 id, item 2 id, …. item N id``. The output is sorted by
+frequency. Expected program output is provided in /sample/out.txt.
+The sigma is a parameter in the count_overlaps function which sets the lower
 limit of co-occurrence frequency. The sigma value of 2 is passed to this
 function as an argument when it is called.
 
 The database file is included in the program root directory and is loaded when
-the prepare_data() function is run.
+the prepare_data function is called.
 
 **Testing**
 
