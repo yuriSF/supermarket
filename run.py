@@ -65,7 +65,6 @@ if __name__ == '__main__':
     with open('retail.dat', 'rb') as f2:
         data = f2.readlines()
     data = prepare_data(data)
-    print len(data)
     all_overlaps = count_overlaps(data, 2)
     sorted_frequency = sort_by_frequency(all_overlaps)
     output_results(sorted_frequency, sys.argv[1])

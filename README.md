@@ -3,7 +3,7 @@ Supermarket Optimization
 
 **Algorithm**
 
-This program finds the frequency of co-occurrence of SKUs in a database of
+This program finds the frequency of co-occurrence of product IDs in a database of
 2500 transactions, with a minimum co-occurrence >= 3.
 
 Each transaction is compared with other transactions in a pairwise manner.
@@ -22,19 +22,27 @@ Python 2.7 or higher is required to run to the program.
 
 **How to run**
 
-*On a Mac/Linux:*
-
+*Linux/ Mac*
 In a terminal window, navigate to the program directory and run
-the ``__init__.py`` file passing the name of the output file as a command line
+the run.py file passing the name of the output file as a command line
 argument, for example:
 
-``python __init__.py output.txt``
+``python run.py output.txt``
 
-The output of the program will be saved in the program root directory. Sample
-output is provided in /sample/out.txt.
+The output of the program is saved in the program root directory and
+follows the following format: <item set size (N)>, <co-occurrence frequency>,
+<item 1 id >, <item 2 id>, …. <item N id>. The output is sorted by frequency.
+Expected program output is provided in /sample/out.txt.
 
-The sigma value of 2 is hard coded into the program as a parameter to the
-count_overlaps() function. The database file is included in the program
-directory.
+The sigma is a parameter in the count_overlaps() function which sets the lower
+limit of co-occurrence frequency. The sigma value of 2 is passed to this
+function as an argument when it is called.
 
-<!-- The duration of program execution is approximately 330 seconds. -->
+The database file is included in the program root directory and is loaded when
+the prepare_data() function is run.
+
+**Testing**
+
+The program can be tested using a small test dataset by running:
+
+``python test.py output.txt``
