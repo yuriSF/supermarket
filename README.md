@@ -2,6 +2,7 @@ Supermarket Optimization
 ========================
 
 **Algorithm**
+
 This program finds the frequency of co-occurrence of SKUs in a database of
 2500 transactions, with a minimum co-occurrence >= 3.
 
@@ -16,15 +17,18 @@ The returned dictionary is represented as a nested array and sorted by
 frequency.
 
 **Dependencies**
+
 Python 2.7 or higher is required to run to the program.
 
 **How to run**
+
 *On a Mac/Linux:*
+
 In a terminal window, navigate to the program directory and run
-the __init__.py file passing the name of the output file as a command line
+the ``__init__.py`` file passing the name of the output file as a command line
 argument, for example:
 
-python __init__.py output.txt
+python ``__init__.py`` output.txt
 
 The output of the program will be saved in the program root directory. Sample
 output is provided in /sample/out.txt
