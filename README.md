@@ -43,6 +43,6 @@ the prepare_data() function is run.
 
 **Testing**
 
-The program can be tested using a small test dataset by running:
+The program can be tested on a small test dataset by running:
 
->python test.py``
+>python test.py
